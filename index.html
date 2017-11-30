@@ -1191,8 +1191,17 @@ body {
   margin: 0 auto;
   position: relative;
 }
-.nodisplay + img[async] {
+.is-builder .nodisplay + img[async],
+.is-builder amp-img > a + img[async] {
   display: none;
+}
+html:not(.is-builder) amp-img > a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 .is-builder .temp-amp-sizer {
   position: absolute;
@@ -1233,127 +1242,299 @@ blockquote {
   letter-spacing: 0.5px;
   line-height: 1.7;
 }
-.cid-qCnpf259LS .headerbar {
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.is-builder .builder-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1015;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  position: fixed;
+}
+.cid-qCt1EpKpVs .headerbar {
   display: flex;
   padding: 1rem;
   min-height: 60px;
   align-items: center;
-  background: #494949;
+  background: #ffffff;
 }
-.cid-qCnpf259LS .headerbar.sticky-nav {
+.cid-qCt1EpKpVs .headerbar.sticky-nav {
   position: fixed;
   z-index: 1000;
   width: 100%;
 }
-.cid-qCnpf259LS .brand {
+.cid-qCt1EpKpVs .brand {
   display: flex;
   align-items: center;
 }
-.cid-qCnpf259LS .brand-name {
-  color: #fff;
+.cid-qCt1EpKpVs .brand-name {
+  color: #232323;
 }
-.cid-qCnpf259LS .sidebar {
-  padding: 10px;
+.cid-qCt1EpKpVs .sidebar {
+  padding: 1rem 0;
   margin: 0;
 }
-.cid-qCnpf259LS .sidebar > li {
+.cid-qCt1EpKpVs .sidebar > li {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.cid-qCt1EpKpVs .sidebar a {
+  text-decoration: none;
   margin-bottom: 10px;
 }
-.cid-qCnpf259LS .sidebar a {
-  text-decoration: none;
-}
-.cid-qCnpf259LS .close-sidebar {
+.cid-qCt1EpKpVs .close-sidebar {
   width: 30px;
-  height: 20px;
+  height: 30px;
   position: relative;
+  padding-top: 1rem;
   cursor: pointer;
 }
-.cid-qCnpf259LS .close-sidebar span {
+.cid-qCt1EpKpVs .close-sidebar span {
   position: absolute;
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #ffffff;
+  background-color: #232323;
 }
-.cid-qCnpf259LS .close-sidebar span:nth-child(1) {
+.cid-qCt1EpKpVs .close-sidebar span:nth-child(1) {
   transform: rotate(45deg);
 }
-.cid-qCnpf259LS .close-sidebar span:nth-child(2) {
+.cid-qCt1EpKpVs .close-sidebar span:nth-child(2) {
   transform: rotate(-45deg);
 }
-.cid-qCnpf259LS .hamburger {
+.cid-qCt1EpKpVs .hamburger {
   margin-left: auto;
   width: 30px;
   height: 20px;
   position: relative;
   cursor: pointer;
 }
-.cid-qCnpf259LS .hamburger:focus {
+.cid-qCt1EpKpVs .hamburger:focus {
   outline: none;
 }
-.cid-qCnpf259LS .hamburger span {
+.cid-qCt1EpKpVs .hamburger span {
   position: absolute;
   right: 0;
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #ffffff;
+  background-color: #232323;
 }
-.cid-qCnpf259LS .hamburger span:nth-child(1) {
+.cid-qCt1EpKpVs .hamburger span:nth-child(1) {
   top: 0;
   transition: all .2s;
 }
-.cid-qCnpf259LS .hamburger span:nth-child(2) {
+.cid-qCt1EpKpVs .hamburger span:nth-child(2) {
   top: 8px;
   transition: all .15s;
 }
-.cid-qCnpf259LS .hamburger span:nth-child(3) {
+.cid-qCt1EpKpVs .hamburger span:nth-child(3) {
   top: 8px;
   transition: all .15s;
 }
-.cid-qCnpf259LS .hamburger span:nth-child(4) {
+.cid-qCt1EpKpVs .hamburger span:nth-child(4) {
   top: 16px;
   transition: all .2s;
 }
-.cid-qCnpf259LS amp-sidebar[side] {
-  background: #494949;
-  color: #fff;
-  padding: 1rem;
-  z-index: 1030;
-}
-.cid-qCnpf259LS amp-img {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 1rem;
-}
-.cid-qCnpf259LS .i-amphtml-sidebar-mask {
-  z-index: 1001 ;
-}
-.cid-qCnpf259LS .menu-container {
+.cid-qCt1EpKpVs .builder-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
   display: none;
-  margin-left: auto;
-}
-.cid-qCnpf259LS .menu-container .sidebar {
-  padding: 0;
-  flex-wrap: wrap;
-  list-style-type: none;
-  display: flex;
-}
-.cid-qCnpf259LS .menu-container .sidebar li {
-  padding: .5rem .7rem;
-  margin: 0;
+  background: #ffffff;
+  z-index: 1030;
+  padding: 1rem 3rem;
+  max-width: 20rem;
 }
 @media (min-width: 992px) {
-  .cid-qCnpf259LS .menu-container {
-    display: block;
+  .cid-qCt1EpKpVs .brand-name {
+    min-width: 8rem;
   }
-  .cid-qCnpf259LS .hamburger {
+  .cid-qCt1EpKpVs .builder-sidebar {
+    margin-left: auto;
+    position: relative;
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+    max-width: initial;
+    padding: 0;
+  }
+  .cid-qCt1EpKpVs .builder-sidebar .close-sidebar {
     display: none;
   }
+  .cid-qCt1EpKpVs .builder-sidebar .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cid-qCt1EpKpVs .builder-sidebar .sidebar li {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cid-qCt1EpKpVs .builder-sidebar .sidebar li a {
+    padding: .5rem;
+    margin: 0;
+  }
+  .cid-qCt1EpKpVs .hamburger {
+    display: none;
+  }
+  .cid-qCt1EpKpVs .builder-overlay {
+    display: none ;
+  }
 }
-.cid-qCnlTkeCfS {
+.cid-qCt1EpKpVs amp-img {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.cid-qCsAJzqX9L {
   background-image: url("assets/images/background3.jpg");
+}
+.cid-qCsEORNARN {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #f1f1f1;
+}
+.cid-qCsEORNARN .mbr-section-btn {
+  margin-bottom: 20px;
+}
+.cid-qCsEORNARN amp-img {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.cid-qCt1JL5PJp {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+}
+.cid-qCt1JL5PJp .row {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.cid-qCt1JL5PJp .justify-content-center {
+  justify-content: center;
+}
+.cid-qCt1JL5PJp .items-col {
+  margin-bottom: 2rem;
+  border-right: 2px solid #efefef;
+}
+.cid-qCt1JL5PJp .items-col:first-child {
+  border-left: 2px solid #efefef;
+}
+.cid-qCt1JL5PJp .items-col .item {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .cid-qCt1JL5PJp .col-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .cid-qCt1JL5PJp .row {
+    margin: 0;
+  }
+  .cid-qCt1JL5PJp .items-col {
+    text-align: center;
+    border-left: 2px solid #efefef;
+  }
+}
+@media (min-width: 768px) {
+  .cid-qCt1JL5PJp .col-md-4 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .cid-qCt1JL5PJp .col-md-3 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .cid-qCt1JL5PJp .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .cid-qCt1JL5PJp .col-md-3.items-col:nth-child(4) {
+    border-left: 2px solid #efefef;
+  }
+}
+@media (min-width: 992px) {
+  .cid-qCt1JL5PJp .col-lg-5 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .cid-qCt1JL5PJp .col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .cid-qCt1JL5PJp .col-lg-4 {
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .cid-qCt1JL5PJp .col-lg-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 </style>
  
@@ -1363,38 +1544,43 @@ blockquote {
   
 </head>
 <body>
-<amp-sidebar id="menu1-o" layout="nodisplay" side="right" class="mbr-white cid-qCnpf259LS" data-rv-view="5">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">
-       <span></span>
-       <span></span>
-  </div>
-  <ul class="sidebar" data-app-modern-menu="true">
-    <li><a href="#" class="display-4">Example 1</a></li>
-    <li><a href="#" class="display-4">Example 2</a></li>
-    <li><a href="#" class="display-4">Example 3</a></li>
-  </ul>
-</amp-sidebar><section class="menu cid-qCnpf259LS" id="menu1-o" data-rv-view="5">
+<section class="menu cid-qCt1EpKpVs" id="menu2-1b" data-rv-view="57">
 
     
-    
-
     <nav class="headerbar sticky-nav">
       <div class="brand">
           <span class="brand-logo">
-              <amp-img src="assets/images/logo1.png" layout="responsive" width="48" height="47" alt="a sample image">
+              <amp-img src="assets/images/logo1.png" layout="responsive" width="64" height="62" alt="a sample image">
                   
               </amp-img>
           </span>
-          <div class="brand-name mbr-fonts-style mbr-white display-2">Google AMP theme</div>
+          <div class="brand-name mbr-fonts-style mbr-black display-2">Mobirise AMP</div>
       </div>
-      <div class="menu-container">
+      
+      <!-- ОВерлей в браузере должен удалять т.к. у амп-садбар есть свой -->
+      <div class="overlay builder-overlay" onclick="$('#builder-sidebar').hide(); $('.builder-overlay').hide();"></div>
+      
+
+      <div class="builder-sidebar" id="builder-sidebar">
+          <!-- <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar"> -->
+            <div role="button" aria-label="close sidebar" onclick="$('#builder-sidebar').hide(); $('.builder-overlay').hide();" tabindex="0" class="close-sidebar">
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- если юзать navbar-nav nav-dropdown класс, меню будет крашиться при добавлении нового итема, но без этого добавляется линк а не итем--> 
           <ul class="sidebar" data-app-modern-menu="true">
-            <li><a class="text-white display-4" href="#">Example 1</a></li>
-            <li><a class="text-white display-4" href="#">Example 2</a></li>
-            <li><a class="text-white display-4" href="#">Example 3</a></li>
+            <li><a class="text-black display-4" href="https://mobirise.com">Example 1</a></li>
+            <li><a class="text-black display-4" href="https://mobirise.com">Example 2</a></li>
+            <li><a class="text-black display-4" href="https://mobirise.com">Example 3</a></li>
           </ul>
+          
+          <div class="navbar-buttons mbr-section-btn align-center">
+            <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com">Btn Example</a></div>
       </div>
-      <div role="button" on="tap:sidebar1.open" tabindex="0" class="hamburger">
+
+      <!-- событие онклик заменить на амп ивент on -->
+      <div role="button" tabindex="0" class="hamburger" onclick="$('#builder-sidebar').show(); $('.builder-overlay').show();">
           <span></span>
           <span></span>
           <span></span>
@@ -1403,7 +1589,7 @@ blockquote {
     </nav>
 </section>
 
-<section class="header1 cid-qCnlTkeCfS mbr-fullscreen" id="header1-l" data-rv-view="7">
+<section class="header1 cid-qCsAJzqX9L mbr-fullscreen" id="header1-0" data-rv-view="59">
 
     
 
@@ -1418,6 +1604,83 @@ blockquote {
         </div>
     </div>
 
+</section>
+
+<section class="header2 cid-qCsEORNARN" id="header2-f" data-rv-view="62">
+
+    
+
+    
+
+    <div class="mbr-container">
+        <h1 class="mbr-fonts-style align-center mbr-white display-1">Mobirise AMP</h1>
+        <h3 class="mbr-fonts-style align-center mbr-white display-2">ACCELERATED MOBILE PAGES BY GOOGLE</h3>
+        <div class="mbr-text align-center">
+            <p class="mbr-text mbr-fonts-style display-7">Intro with background image and a picture at the bottom. Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface.</p>
+        </div>
+        <div class="mbr-section-btn align-center">
+            <a class="btn btn-md btn-primary display-4" href="https://mobirise.com">LEARN MORE</a>
+        </div>
+
+        <amp-img src="assets/images/amp-phone.jpg" alt="a sample image" width="688" height="387" layout="responsive">
+            
+        </amp-img>
+    </div>
+
+</section>
+
+<section class="footer2 cid-qCt1JL5PJp" id="footer2-1c" data-rv-view="65">
+
+    
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="items-col col-sm-12 col-md-3 col-lg-5">
+                <h3 class="mbr-fonts-style group-title display-2">New</h3>
+                <div class="items">
+                    
+                    
+                    
+                <p class="item mbr-fonts-style display-4">Item 1</p><p class="item mbr-fonts-style display-4">Item 2</p><p class="item mbr-fonts-style display-4">Item 3</p></div>
+            </div>
+
+            <div class="items-col col-sm-12 col-md-3 col-lg-5">
+                <h3 class="mbr-fonts-style group-title display-2">Mobirise</h3>
+                <div class="items">
+                    
+                    
+                    
+                <p class="item mbr-fonts-style display-4">Item 1</p><p class="item mbr-fonts-style display-4">Item 2</p><p class="item mbr-fonts-style display-4">Item 3</p></div>
+            </div>
+
+            <div class="items-col col-sm-12 col-md-3 col-lg-5">
+                <h3 class="mbr-fonts-style group-title display-2">Theme</h3>
+                <div class="items">
+                    
+                    
+                    
+                <p class="item mbr-fonts-style display-4">Item 1</p><p class="item mbr-fonts-style display-4">Item 2</p><p class="item mbr-fonts-style display-4">Item 3</p></div>
+            </div>
+
+            <div class="items-col col-sm-12 col-md-3 col-lg-5">
+                <h3 class="mbr-fonts-style group-title display-2">Valid</h3>
+                <div class="items">
+                    
+                    
+                    
+                <p class="item mbr-fonts-style display-4">Item 1</p><p class="item mbr-fonts-style display-4">Item 2</p><p class="item mbr-fonts-style display-4">Item 3</p></div>
+            </div>
+
+            <div class="items-col col-sm-12 col-md-3 col-lg-5">
+                <h3 class="mbr-fonts-style group-title display-2">Google AMP</h3>
+                <div class="items">
+                    
+                    
+                    
+                <p class="item mbr-fonts-style display-4">Item 1</p><p class="item mbr-fonts-style display-4">Item 2</p><p class="item mbr-fonts-style display-4">Item 3</p></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
